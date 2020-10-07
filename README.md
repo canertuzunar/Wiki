@@ -2,15 +2,17 @@ game wiki project store all game data(characters, screenshots, cheats, etc...)
 
 ideas => 
 
-game score(from user)
-comment
+	game score(from user)
+	comment
 
+DevOPS
 
-Backend => {
-	[] MongoDB server with mongoose
-	[] Graphql Server with authentication 
-	[] JWT for auth
-	[] kubernetes and Docker for scale 
+Backend =>
+
+	1.[ ] MongoDB server with mongoose
+	2.[ ] Graphql Server with authentication 
+	3.[ ] JWT for auth
+	4.[ ] kubernetes and Docker for scale 
 
 	Mongoose schemas => 
 		game {
@@ -22,10 +24,11 @@ Backend => {
 		}
 	Grahpql => 
 		secure mutation with jwt
-}
 
-Frontend => {
+
+Frontend => 
+
 	responsive design
 	styled component
-}
+
 
