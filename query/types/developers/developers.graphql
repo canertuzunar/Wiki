@@ -1,0 +1,15 @@
+
+    type Url {
+        name: String!
+        url: String!
+    }
+    type Developers {
+        name: String!
+        since: String!
+        games: [String!]
+        socialLinks: [Url!]
+    }
+    type Query {
+        getDevelopers: Developers
+        getDeveloper(name: String!): Developers
+    }
