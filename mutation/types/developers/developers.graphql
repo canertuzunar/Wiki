@@ -1,0 +1,26 @@
+type Url {
+    name: String!
+    url: String!
+}
+type Developers {
+    name: String!
+    since: String!
+    games: [String!]
+    socialLinks: [Url!]
+}
+input UrlInput {
+    name: String!
+    url: String!
+}
+input DevelopersInput{
+    name: String!
+    since: String!
+    games: [String!]
+    socialLinks: [UrlInput!]
+
+}
+type Mutation {
+    addDevelopers(input: DevelopersInput!): Developers
+    removeDevelopers(name: String!): Developers
+    updateDevelopers(name: String!): Developers
+}
