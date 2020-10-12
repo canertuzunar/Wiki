@@ -1,0 +1,26 @@
+    type Engine{ 
+        name: String!
+        games: [String!]
+        owner: Owner! 
+        license: String!
+    }
+    type Owner {
+        name: String!
+        url: String!
+    }
+    input OwnerInput {
+        name: String!
+        url: String!
+    }
+    input EngineInput {
+        name: String!
+        games: [String!]
+        owner: OwnerInput! 
+        license: String!
+
+    }
+    type Mutation {
+        addEngine(input: EngineInput!): Engine
+        removeEngine(name: String!): Engine
+        updateEngine(name: String!): Engine
+    }
