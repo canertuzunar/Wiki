@@ -1,12 +1,12 @@
 const { DevelopersModel } = require("./developers.model")
 
 const DevelopersResolver = {
-    getDevelopers: async () => {
+    developers: async () => {
         return await DeveloperModel.find({})
         .lean()
         .exec()
     },
-    getDeveloper: async () => {
+    developer: async () => {
         return await DeveloperModel.findOne({})
         .lean()
         .exec()
