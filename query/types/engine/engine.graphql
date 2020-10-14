@@ -9,5 +9,6 @@
         url: String!
     }
     type Query {
-        engine: Engine!
+        engines: Engine!
+        engine(name: String!): Engine!
     }
