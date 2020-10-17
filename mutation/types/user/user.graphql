@@ -1,0 +1,13 @@
+type User{
+    username: String!
+    password: String!
+    email: String!
+}
+input UserInput {
+    username: String!
+    password: String!
+    email: String!
+}
+type Mutation {
+    createUser(input: UserInput!): User
+}
