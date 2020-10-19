@@ -8,6 +8,16 @@ input UserInput {
     password: String!
     email: String!
 }
+input UpdateUserInput {
+    username: String
+    password: String
+    email: String
+}
+type Query {
+    user(username:String!, password: String!): User
+}
 type Mutation {
     createUser(input: UserInput!): User
+    removeUser(name: String!): User
+    updateUser(name: String! input: UpdateUserInput): User
 }
