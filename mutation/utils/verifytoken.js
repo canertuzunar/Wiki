@@ -1,7 +1,8 @@
 import jwt from'jsonwebtoken'
 export default function VerifyToken(req, res, next) {
-    const token = req.headers['x-access-token'] || req.headers['authorization'] || req.query.token;
-    if(!token) {
+    const bearerToken = req.headers['x-access-token'] || req.headers['authorization'] || req.query.token;
+    const token = bearerToken.split(" ")[1]
+    if(!bearerToken) {
         return res.status(403).json({
             success: false,
             message: 'not logged in'
