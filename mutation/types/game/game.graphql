@@ -37,7 +37,15 @@ input GameInput {
 input UpdateGameInput {
     name: String
     mainCharacter: String
-    characters: [CharactersInput]
+    category: String
+    publisher: String
+    developers: String
+    engine: String
+    platforms: [String!]
+    release: String
+    directors: [String!]
+    series: String
+    characters: [CharactersInput!]
 }
 type Mutation {
     addGame(input: GameInput!): Game
