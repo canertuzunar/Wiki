@@ -10,6 +10,9 @@ import {GraphQLFileLoader} from'@graphql-tools/graphql-file-loader'
 import {merge} from 'lodash'
 import DevelopersResolver from '../types/developers/developers.resolver';
 import EngineResolver from '../types/engine/engine.resolver'
+import VerifyToken from '../utils/verifytoken';
+import UserResolver from '../types/user/user.resolver';
+import authentication from '../utils/auth';
 
 app.use(bodyParser.urlencoded({
    extended: false
@@ -17,17 +20,16 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 export const start = async () => {
     await connect(config.URL, {useUnifiedTopology: true})
-    console.log(config)
 
     const schema = await loadSchema('../***/**/*.graphql', {
         loaders: [
             new GraphQLFileLoader()
         ]
     })
-    
-    app.use('/', graphqlHTTP({
+    app.use('/login', authentication)
+    app.use('/graph', VerifyToken, graphqlHTTP({
         schema: schema,
-        rootValue: merge({}, DevelopersResolver, GameResolver, EngineResolver),
+        rootValue: merge({}, UserResolver, DevelopersResolver, GameResolver, EngineResolver),
         graphiql: true
     }))
     app.listen(config.PORT, () => {
