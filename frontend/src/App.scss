@@ -3,8 +3,7 @@
     margin: 0 auto;
     width: 100%;
     max-width: 100vw;
-    display: grid;
-    justify-content: stretch;
-    display: grid;
-    grid-template-columns: [margin1-start] 256px [margin1-end main-start] minmax(auto,1184px) [main-end margin2-start] 256px [margin2-end]
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
 }
