@@ -1,16 +1,5 @@
 #footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-}
-
-.footerList{
-    li {
-        display: inline;
-        margin: 25px;
-    }
-    margin: 0;
-    padding: 0;
+   display: flex;
+   flex-basis: 95%;
+   justify-content: space-between;
 }
