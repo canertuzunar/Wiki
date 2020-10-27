@@ -1,0 +1,14 @@
+.header {
+  -ms-flex-preferred-size: 95%;
+      flex-basis: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row nowrap;
+          flex: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Header.module.css.map */
