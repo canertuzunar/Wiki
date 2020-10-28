@@ -1,12 +1,13 @@
 import React from 'react'
+import { LinkedText } from '..'
 import styles from'./Footer.module.scss'
 
 const Footer = () => {
     return (
         <footer id={styles.footer}>
-            <p>choose language</p>
-            <p>feedback</p>
-            <p>social media</p>
+            <LinkedText link="/" name="choose language"/>
+            <LinkedText link="/" name="feedback"/>
+            <LinkedText link="/" name="social media"/>
         </footer>
     )
 }
