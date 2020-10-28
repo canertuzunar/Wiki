@@ -1,12 +1,14 @@
 import Header from'./Header/Header'
 import Footer from'./Footer/Footer'
 import Layout from'./Layout/Layout'
-import Link from'./Link/Link'
+import LinkedText from'./Link/Link'
 import Logo from'./Logo/Logo'
+import Head from './Head/Head'
 export {
     Footer,
     Header,
     Layout,
-    Link,
-    Logo
+    LinkedText,
+    Logo,
+    Head
 }
