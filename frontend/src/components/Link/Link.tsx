@@ -1,13 +1,16 @@
 import React from'react'
-
-const Link = () => {
+import { Link } from'react-router-dom'
+import style from'./Link.module.scss'
+interface LinkProps{
+    name: string,
+    link: string
+}
+const LinkedText: React.FC<LinkProps> = ({name, link}) => {
     return (
-        <ul>
-            <li>choose language</li>
-            <li>feedback</li>
-            <li>social media</li>
-        </ul>
+        <Link to={link} className={style.link}>
+            <p>{name}</p>
+        </Link>
     )
 }
 
-export default Link
+export default LinkedText
