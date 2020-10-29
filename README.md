@@ -23,8 +23,12 @@ Backend =>
 	4.[ ] kubernetes and Docker for scale 
 Frontend => 
 
-	responsive design
-	styled component
+	1.[]SearchBar Focus
+	2.[]Responsive Design
+	3.[]Flexbox driven code
+	4.[]Refactor the style code
+	5.[]Change Design
+	6.[]Module System
 
 
 #
