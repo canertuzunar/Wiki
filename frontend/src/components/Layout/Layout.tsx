@@ -1,5 +1,5 @@
 import React, { Fragment } from'react'
-import {Header, Footer} from'../index'
+import {Header, Footer, Head} from'../index'
 
 interface LayoutProps {
     children: React.ReactNode
@@ -8,8 +8,9 @@ interface LayoutProps {
 const Layout : React.FC<LayoutProps> = ({children}) => {
     return (
         <Fragment>
+            <Head/>
             <Header/>
-            {children}
+                {children}
             <Footer/>
         </Fragment>
     )
