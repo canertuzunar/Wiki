@@ -4,7 +4,9 @@ $white: #ffffff;
 $secondary: #e5e5e5;
 $transparent30: rgba(0, 0, 0, 0.7);
 
-body {
+#root{
+    display: flex;
+    flex-flow: column nowrap;
     font-family: Roboto;
 }
 .bold {
