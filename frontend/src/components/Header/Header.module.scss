@@ -1,6 +1,17 @@
+header{
+    display: flex;
+    justify-content: center;
+}
 .header{
     flex-basis: 95%;
     display: flex;
-    flex: row nowrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
+}
+
+
+@media(min-width:320px){
+    .sign{
+        display:none
+    }
 }

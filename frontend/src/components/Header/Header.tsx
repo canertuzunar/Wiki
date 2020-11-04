@@ -1,13 +1,16 @@
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import { Logo } from '..'
+import React from 'react'
+import { LinkedText, Logo } from '..'
 import styles from'./Header.module.scss'
 const Header = () => {
     return (
-        <header className={styles.header}>
-            <p>Button</p>
-            <Logo/>
-            <p>sign in</p>
+        <header>
+            <div className={styles.header}>
+                <p className={styles.menuButton}>Button</p>
+                <Logo/>
+                <div className={styles.sign}>
+                    <LinkedText name="sign in" link="/"/>
+                </div>
+                </div>
         </header>
     )
 }
