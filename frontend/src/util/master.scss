@@ -6,7 +6,7 @@ $transparent30: rgba(0, 0, 0, 0.7);
 
 #root{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     font-family: Roboto;
     justify-content: center;
 }
@@ -21,3 +21,21 @@ $transparent30: rgba(0, 0, 0, 0.7);
 .font24{
     font-size:24px;
 }
+
+.font36{
+    font-size:36px;
+}
+
+.font48{
+    font-size: 48px;
+}
+
+.font58{
+    font-size: 58px;
+}
+
+.font60{
+    font-size:60px;
+}
+
+
