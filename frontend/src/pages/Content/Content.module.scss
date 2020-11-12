@@ -1,0 +1,53 @@
+@import '../../util/master.scss';
+
+.wrapper{
+    display: flex;
+    height: 80vh;
+    flex-flow: row wrap;
+    flex-basis:95%;
+    gap: 1em;
+    overflow-y: scroll;
+}
+.wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.detailSide{
+    display: flex;
+    flex-flow:row wrap;
+    flex-basis:29%;
+    justify-content: center;
+    background-color: $secondary;
+    gap:2em;
+    img{
+        width: 75%;
+        height: auto;
+    }
+}
+
+.contentSide{
+    flex-basis:69%;
+    background-color: $white;
+}
+
+.details{
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 70%;
+    .detail{
+        display: flex;
+        :nth-child(odd){
+            flex-basis:50%;
+        }
+        :nth-child(even){
+            flex-basis:50%;
+            font-weight: 300;
+        }
+    }
+
+}
+@media(max-width: 1024px){
+    .wrapper{
+        display: block;
+    }
+}
