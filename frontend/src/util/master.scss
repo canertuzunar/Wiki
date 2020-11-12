@@ -4,6 +4,9 @@ $white: #ffffff;
 $secondary: #e5e5e5;
 $transparent30: rgba(0, 0, 0, 0.7);
 
+html{
+    overflow: hidden;
+}
 #root{
     display: flex;
     flex-flow: row wrap;
@@ -16,6 +19,14 @@ $transparent30: rgba(0, 0, 0, 0.7);
 
 .secondaryText{
     color:$secondary
+}
+
+.font18{
+    font-size:18px;
+}
+
+.font22{
+    font-size: 22px;
 }
 
 .font24{
@@ -36,6 +47,10 @@ $transparent30: rgba(0, 0, 0, 0.7);
 
 .font60{
     font-size:60px;
+}
+
+.debug{
+    border:1px solid black;
 }
 
 
