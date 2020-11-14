@@ -1,9 +1,9 @@
 import i18next from 'i18next';
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from'react-router-dom'
+import React, { useEffect } from 'react';
+import { Switch, Route, useLocation} from'react-router-dom'
 import { Content, Home } from './pages';
 import './util/master.scss'
-import {StoreProvider} from'./util/store/store'
+import {StoreProvider, useStore} from'./util/store/store'
 import resources from'./util/localize/resources'
 
 i18next.init({
@@ -12,20 +12,24 @@ i18next.init({
 })
 
 const App = () => {
-    return (
+  const location = useLocation()
+  console.log(location)
+  useEffect(() => {
+    const{state, dispatch} = useStore()
+    dispatch({type:"setShadow", value:false})
+  },[location])  
+  return (
       <StoreProvider>
-        <Router>
-          <Switch>
-          <Route path="/content">
-            <Content/>
-          </Route>
-          <Route path="/">
-            <Home/>
-          </Route>
-          </Switch>
-        </Router>
+        <Switch>
+        <Route path="/content">
+          <Content/>
+        </Route>
+        <Route path="/">
+          <Home/>
+        </Route>
+        </Switch>
       </StoreProvider>
-    )
+  )
 }
 
 export default App
