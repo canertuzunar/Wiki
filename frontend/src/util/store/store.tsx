@@ -1,10 +1,11 @@
-import React, {createContext, useContext, useReducer} from'react'
+import React, {createContext, Dispatch, useContext, useReducer} from'react'
 import {InitialState, StateInterface} from './initalState'
-import Reducer from'./reducer'
+import reducer, {ReducerInterface} from'./reducer'
+
 
 interface ContextInterface {
     state: StateInterface,
-    dispatch: ({type}: {type:string}) => void
+    dispatch: Dispatch<ReducerInterface>
 }
 
 const StoreContext = createContext({} as ContextInterface)
@@ -14,7 +15,7 @@ interface StoreInterface {
 }
 
 export const StoreProvider:React.FC<StoreInterface> = ({children}) => {
-    const [state, dispatch] = useReducer(Reducer, InitialState)
+    const [state, dispatch] = useReducer(reducer, InitialState)
     return(
     <StoreContext.Provider value={{state, dispatch}}>
         {children}
