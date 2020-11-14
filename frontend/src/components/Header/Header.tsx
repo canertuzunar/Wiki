@@ -1,16 +1,18 @@
 import React from 'react'
 import { LinkedText, Logo } from '..'
 import styles from'./Header.module.scss'
+import cn from'classnames'
+import cnBind from'classnames/bind'
+import { useStore } from '../../util/store/store'
 const Header = () => {
+    const {state,dispatch} = useStore()
+    let cx = cnBind.bind(styles)
     return (
-        <header>
-            <div className={styles.header}>
-                <p className={styles.menuButton}>Button</p>
+        <header className={cx({headerAttr:state.headerAttr})}>
+            <div className={cx({headerWrapper:true})}>
+                <p className={cn(styles.menuButton)}>Button</p>
                 <Logo/>
-                <div className={styles.sign}>
-                    <LinkedText name="sign in" link="/"/>
-                </div>
-                </div>
+            </div>
         </header>
     )
 }
