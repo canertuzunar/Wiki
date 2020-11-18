@@ -1,48 +1,46 @@
-
-    type Characters {
-        name: String!
-        status: String!
-        image: String!
-    }
-    type Game {
-        name: String!
-        mainCharacter: String!
-        category: String!
-        publisher: String!
-        developers: String!
-        engine: String!
-        platforms: String!
-        release: String!
-        directors: String!
-        series: String!
-        characters: [Characters]
-    }
-    input CharactersInput {
-        name: String!
-        status: String!
-        image: String!
-    }
-    input GameInput {
-        name: String!
-        mainCharacter: String!
-        category: String!
-        publisher: String!
-        developers: String!
-        engine: String!
-        platforms: [String!]
-        release: String!
-        directors: [String!]
-        series: String!
-        characters: [CharactersInput!]
-    }
-    input UpdateGameInput {
-        name: String
-        mainCharacter: String
-        characters: [CharactersInput]
-    }
-    type Query {
-        games: [Game]
-        game(name: String!): Game
-        categoryGame(category: String!): Game
-    }
- 
+type Characters {
+  name: String!
+  status: String!
+  image: String!
+}
+type Game {
+  name: String!
+  mainCharacter: String!
+  category: String!
+  publisher: String!
+  developers: String!
+  engine: String!
+  platforms: String!
+  release: String!
+  directors: String!
+  series: String!
+  characters: [Characters]
+}
+input CharactersInput {
+  name: String!
+  status: String!
+  image: String!
+}
+input GameInput {
+  name: String!
+  mainCharacter: String!
+  category: String!
+  publisher: String!
+  developers: String!
+  engine: String!
+  platforms: [String!]
+  release: String!
+  directors: [String!]
+  series: String!
+  characters: [CharactersInput!]
+}
+input UpdateGameInput {
+  name: String
+  mainCharacter: String
+  characters: [CharactersInput]
+}
+type Query {
+  games: [Game]
+  game(name: String!): Game
+  categoryGame(category: String!): Game
+}

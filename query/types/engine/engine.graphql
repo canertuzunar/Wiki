@@ -1,14 +1,14 @@
-    type Engine{ 
-        name: String!
-        games: [String!]
-        owner: Owner! 
-        license: String!
-    }
-    type Owner {
-        name: String!
-        url: String!
-    }
-    type Query {
-        engines: Engine!
-        engine(name: String!): Engine!
-    }
+type Engine {
+  name: String!
+  games: [String!]
+  owner: Owner!
+  license: String!
+}
+type Owner {
+  name: String!
+  url: String!
+}
+type Query {
+  engines: Engine!
+  engine(name: String!): Engine!
+}
