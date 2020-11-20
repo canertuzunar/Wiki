@@ -1,11 +1,11 @@
 import React from 'react'
-import { LinkedText, Logo } from '..'
+import {  Logo } from '..'
 import styles from'./Header.module.scss'
 import cn from'classnames'
 import cnBind from'classnames/bind'
 import { useStore } from '../../util/store/store'
 const Header = () => {
-    const {state,dispatch} = useStore()
+    const {state} = useStore()
     let cx = cnBind.bind(styles)
     return (
         <header className={cx({headerAttr:state.headerAttr})}>
