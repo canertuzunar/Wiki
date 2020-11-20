@@ -2,14 +2,10 @@
 
 .wrapper{
     display: flex;
-    height: 80vh;
-    flex-flow: row wrap;
-    flex-basis:95%;
-    gap: 1em;
-    overflow-y: scroll;
-}
-.wrapper::-webkit-scrollbar{
-    display: none;
+    flex-basis:100%;
+    flex-direction: row;
+    margin: 0 40px;
+    gap:2em;
 }
 
 .detailSide{
@@ -20,8 +16,11 @@
     background-color: $secondary;
     gap:2em;
     img{
+        margin-top:30px;
         width: 75%;
-        height: auto;
+        height: 750px;
+        object-fit: cover;
+        object-position: center;
     }
 }
 
@@ -34,6 +33,7 @@
     display: flex;
     flex-flow: column wrap;
     flex-basis: 70%;
+    margin:30px 0;
     .detail{
         display: flex;
         :nth-child(odd){

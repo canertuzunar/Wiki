@@ -32,7 +32,7 @@ const Content = () => {
                         </div>
                         <div className={style.detail}>
                             <strong>Engine</strong>
-                            <span>Doom Guy</span>
+                            <span>Doom Engine</span>
                         </div>
                         <div className={style.detail}>
                             <strong>Platforms</strong>
