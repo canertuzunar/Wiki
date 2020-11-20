@@ -8,6 +8,9 @@
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   font-family: Roboto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .bold {
