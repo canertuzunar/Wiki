@@ -1,9 +1,14 @@
 import React from'react'
 import { Link } from 'react-router-dom'
-import style from'./Logo.module.scss'
+import styles from'./Logo.module.scss'
+import cnBind from 'classnames/bind'
+import { useStore } from '../../util/store/store'
+
 const Logo = () => {
+    let cx = cnBind.bind(styles)
+    const {state} = useStore()
     return (
-        <Link to="/" className={style.logo}>
+        <Link to="/content" className={cx({logo:true, white:state.headerAttr})}>
             <h2>GameWiki</h2>
         </Link>
     )
