@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const Layout : React.FC<LayoutProps> = ({children}) => {
-    const {state, dispatch} = useStore()
+    const { dispatch} = useStore()
     const scrollDetector = (scrollY:number) => {
     scrollY > 30 ? dispatch({type:"setShadow", value:true}) : dispatch({type:"setShadow", value:false})
     }
