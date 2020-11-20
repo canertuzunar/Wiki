@@ -1,14 +1,23 @@
-.header {
-  -ms-flex-preferred-size: 95%;
-      flex-basis: 95%;
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: row;
-      -ms-flex: row nowrap;
-          flex: row nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-preferred-size: 95%;
+      flex-basis: 95%;
+}
+
+@media (min-width: 320px) {
+  .sign {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sign {
+    display: block;
+  }
 }
 /*# sourceMappingURL=Header.module.css.map */
