@@ -4,15 +4,11 @@ $white: #ffffff;
 $secondary: #e5e5e5;
 $transparent30: rgba(0, 0, 0, 0.7);
 
-html{
-    overflow: hidden;
+
+body{
+    overflow:hidden;
 }
-#root{
-    display: flex;
-    flex-flow: row wrap;
-    font-family: Roboto;
-    justify-content: center;
-}
+
 .bold {
     font-weight: 700;
 }
