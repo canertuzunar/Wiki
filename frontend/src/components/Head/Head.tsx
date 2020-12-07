@@ -1,20 +1,20 @@
-import React from'react'
-import Helmet from'react-helmet'
+import React from 'react'
+import Helmet from 'react-helmet'
 
 interface HeadInterface {
-    title?: String,
+  title?: String
 }
 
-const Head: React.FC<HeadInterface> = ({title}) => {
-    return(
-        <Helmet>
-            <title> GameWiki - {title}</title>
-        </Helmet>
-    )
+const Head: React.FC<HeadInterface> = ({ title }) => {
+  return (
+    <Helmet>
+      <title> GameWiki - {title}</title>
+    </Helmet>
+  )
 }
 
-Head.defaultProps ={
-    title: ' '
+Head.defaultProps = {
+  title: ' '
 }
 
 export default Head

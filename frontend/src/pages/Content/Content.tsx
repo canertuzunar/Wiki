@@ -1,66 +1,41 @@
-import React from 'react' 
+import React from 'react'
 import style from './Content.module.scss'
 import { Layout } from '../../components'
-import doom from'../../image/doom.jpg'
-
-const Content = () => {
-    return(
-        <Layout>
-            <div className={style.wrapper}>
-                <div className={style.detailSide}>
-                    <img src={doom} alt=""/>
-                    <div className={style.details}>
-                        <div className={style.detail}>
-                            <strong>Release Date:</strong>
-                            <span>27 May 1983</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Main Character</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Category</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Publisher</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Developers</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Engine</strong>
-                            <span>Doom Engine</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Platforms</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Directors</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Series</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                        <div className={style.detail}>
-                            <strong>Characters</strong>
-                            <span>Doom Guy</span>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className={style.contentSide}>
-                    <h2 className={style.title}>DooM</h2>
-                    archive
-                </div>
-            </div>
-        </Layout>
-    )
+import doom from '../../image/doom.jpg'
+import { useParams } from 'react-router-dom'
+import game from '../../graphql/query/game.graphql.js'
+import { Query } from 'react-apollo'
+import Infos from 'src/components/Infos/Infos'
+import ReactMarkdown from 'react-markdown'
+interface GameInterface {
+  game: any
 }
-
+interface GameInterfaceVars {
+  name: string
+}
+const Content = () => {
+  const { id } = useParams<{ id: string }>()
+  console.log(id)
+  return (
+    <Layout>
+      <Query<GameInterface, GameInterfaceVars> query={game} variables={{name:id}}>
+        {({loading, error, data}) => {
+          console.log(loading, error, data, id)
+          return loading ? (<div>loading</div>) :(
+            <div className={style.wrapper}>
+              <div className={style.detailSide}>
+                <img src={doom} alt="" />
+                {<Infos game={data?.game} />}
+              </div>
+              <div className={style.contentSide}>
+                {<ReactMarkdown source={data?.game.content}/>}
+              </div>
+            </div>
+          )
+        }}
+      </Query>
+    </Layout>
+  )
+}
 
 export default Content

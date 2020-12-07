@@ -9,6 +9,26 @@ ideas =>
 DevOPS
 
 Backend =>
+	Data Structure =>
+	Game => { 
+		url(Game Photo) => String 
+		name => String,
+		mainCharacter => String(Searchable?),
+		category => String(Searchable?), 
+		publisher => String(Searchable?),
+		developers => String(Searchable?),
+		engine => String(Searchable?),
+		platforms => String(Searchable?),
+		directors => String(Searchable?),
+		series => String
+		characters {
+			name: String,
+			status: String,
+			imageURL: String
+			*Maybe this part can be insert to document*imageURL: String
+		} 
+		content: String(Markdown)
+	}
 
 	1.[x] MongoDB server with mongoose
 		1.[x] Engine

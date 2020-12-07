@@ -4,7 +4,8 @@ export const GameModel= new mongoose.Schema({
         name: {
             type: String,
             required: true,
-            unique: true
+            unique: true,
+            text: true
         },
         mainCharacter: {
            type: String,
@@ -18,34 +19,29 @@ export const GameModel= new mongoose.Schema({
             type: String,
             required: true
         },
-        developers: {
-            type: String,
-            required: true
-        },
+        developers: [{
+            name: {
+                type: String,
+                required: true
+            }
+        }],
         engine: {
             type: String,
             required: true
         },
-        platforms: [
-            {
-                name: {
-                    type: String,
-                    required: true
-                }
-            }
-        ],
+        platforms: [{
+            name:String
+        }],
         release: {
             type: String,
             required: true
         },
-        directors:[
-            {
-                name: {
-                    type: String,
-                    required: true
-                }
+        directors:[{
+            name: {
+                type: String,
+                required: true
             }
-        ],
+        }],
         series: {
             type: String,
             required: true
@@ -56,7 +52,8 @@ export const GameModel= new mongoose.Schema({
                 status: String,
                 image: String
             }
-        ]
+        ],
+        content: String
 })
 
 

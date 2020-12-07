@@ -13,13 +13,18 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^6.1.0",
     "@types/react-router-dom": "^5.1.6",
+    "apollo-boost": "^0.4.9",
     "classnames": "^2.2.6",
+    "graphql": "^15.4.0",
+    "graphql-tag": "^2.11.0",
     "i18next": "^19.8.3",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "react": "^16.14.0",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
@@ -44,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.2.0"
   }
 }

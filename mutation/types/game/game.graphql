@@ -8,44 +8,50 @@ type Game {
     mainCharacter: String!
     category: String!
     publisher: String!
-    developers: String!
+    developers: [String!]
     engine: String!
-    platforms: String!
+    platforms: [String!]
     release: String!
-    directors: String!
+    directors: [String!]
     series: String!
     characters: [Characters]
+    content: String!
 }
 input CharactersInput {
     name: String!
     status: String!
     image: String!
 }
+input ArrayInput{
+    name: String
+}
 input GameInput {
     name: String!
     mainCharacter: String!
     category: String!
     publisher: String!
-    developers: String!
+    developers: [ArrayInput]!
     engine: String!
-    platforms: [String!]
+    platforms: [ArrayInput]!
     release: String!
-    directors: [String!]
+    directors: [ArrayInput]!
     series: String!
     characters: [CharactersInput!]
+    content: String!
 }
 input UpdateGameInput {
     name: String
     mainCharacter: String
     category: String
     publisher: String
-    developers: String
+    developers: [String!]
     engine: String
     platforms: [String!]
     release: String
     directors: [String!]
     series: String
     characters: [CharactersInput!]
+    content: String!
 }
 type Mutation {
     addGame(input: GameInput!): Game
