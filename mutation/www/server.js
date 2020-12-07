@@ -13,7 +13,11 @@ import EngineResolver from '../types/engine/engine.resolver'
 import VerifyToken from '../utils/verifytoken';
 import UserResolver from '../types/user/user.resolver';
 import authentication from '../utils/auth';
+const mongoose = require('mongoose')
 
+
+
+mongoose.set('useCreateIndex', true)
 app.use(bodyParser.urlencoded({
    extended: false
 }));
@@ -21,13 +25,13 @@ app.use(bodyParser.json());
 export const start = async () => {
     await connect(config.URL, {useUnifiedTopology: true})
 
-    const schema = await loadSchema('../***/**/*.graphql', {
+    const schema = await loadSchema('./***/**/*.graphql', {
         loaders: [
             new GraphQLFileLoader()
         ]
     })
     app.use('/login', authentication)
-    app.use('/graph', VerifyToken, graphqlHTTP({
+    app.use('/graphql',  graphqlHTTP({
         schema: schema,
         rootValue: merge({}, UserResolver, DevelopersResolver, GameResolver, EngineResolver),
         graphiql: true

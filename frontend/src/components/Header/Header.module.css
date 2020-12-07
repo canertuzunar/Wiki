@@ -3,10 +3,10 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-preferred-size: 95%;
-      flex-basis: 95%;
+  flex-basis: 95%;
 }
 
 @media (min-width: 320px) {

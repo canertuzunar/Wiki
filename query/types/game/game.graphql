@@ -3,41 +3,22 @@ type Characters {
   status: String!
   image: String!
 }
+type ArrayType{
+  name: String
+}
 type Game {
   name: String!
   mainCharacter: String!
   category: String!
   publisher: String!
-  developers: String!
+  developers: [ArrayType!]
   engine: String!
-  platforms: String!
+  platforms: [ArrayType!]
   release: String!
-  directors: String!
+  directors: [ArrayType!]
   series: String!
   characters: [Characters]
-}
-input CharactersInput {
-  name: String!
-  status: String!
-  image: String!
-}
-input GameInput {
-  name: String!
-  mainCharacter: String!
-  category: String!
-  publisher: String!
-  developers: String!
-  engine: String!
-  platforms: [String!]
-  release: String!
-  directors: [String!]
-  series: String!
-  characters: [CharactersInput!]
-}
-input UpdateGameInput {
-  name: String
-  mainCharacter: String
-  characters: [CharactersInput]
+  content: String!
 }
 type Query {
   games: [Game]

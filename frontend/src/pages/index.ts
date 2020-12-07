@@ -1,7 +1,3 @@
-import Home from'./Home/Home'
+import Home from './Home/Home'
 import Content from './Content/Content'
-export {
-    Home,
-    Content
-
-}
+export { Home, Content }
