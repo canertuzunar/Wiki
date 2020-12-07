@@ -1,9 +1,9 @@
 {
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,UAAU,EAAC,GAAG;CACjB;;AAED,MAAM,EAAC,SAAS,EAAE,KAAK;EACnB,AAAA,KAAK,CAAA;IACD,OAAO,EAAC,IACZ;GAAC;;;AAGL,MAAM,EAAC,SAAS,EAAE,MAAM;EACpB,AAAA,KAAK,CAAA;IACD,OAAO,EAAE,KAAK;GACjB",
-    "sources": [
-        "Header.module.scss"
-    ],
-    "names": [],
-    "file": "Header.module.css"
+  "version": 3,
+  "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,UAAU,EAAC,GAAG;CACjB;;AAED,MAAM,EAAC,SAAS,EAAE,KAAK;EACnB,AAAA,KAAK,CAAA;IACD,OAAO,EAAC,IACZ;GAAC;;;AAGL,MAAM,EAAC,SAAS,EAAE,MAAM;EACpB,AAAA,KAAK,CAAA;IACD,OAAO,EAAE,KAAK;GACjB",
+  "sources": [
+    "Header.module.scss"
+  ],
+  "names": [],
+  "file": "Header.module.css"
 }

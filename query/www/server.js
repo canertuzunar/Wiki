@@ -6,11 +6,19 @@ import { connect } from '../utils/connect'
 import options from '../config/options'
 import { graphqlHTTP } from 'express-graphql'
 import GameResolver from '../types/game/game.resolver'
-import { loadSchema } from '@graphql-tools/load'
-import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader'
-import { merge } from 'lodash'
+import {buildASTSchema} from'graphql'
+import { loadFilesSync } from "@graphql-tools/load-files";
+import { mergeTypeDefs } from '@graphql-tools/merge'
+import {merge} from'lodash'
 import DevelopersResolver from '../types/developers/developers.resolver'
 import EngineResolver from '../types/engine/engine.resolver'
+import cors from'cors'  
+const mongoose = require('mongoose')
+
+
+
+mongoose.set('useCreateIndex', true)
+app.use(cors())
 
 app.use(
   bodyParser.urlencoded({
@@ -28,10 +36,9 @@ export const start = async () => {
         }
     `
 
-  const schema = await loadSchema('../***/**/*.graphql', {
-    loaders: [new GraphQLFileLoader()]
-  })
-
+  const typesArray = await loadFilesSync(`./***/**/*.graphql`, {extensions: ['graphql']})
+  const mergedSchema = mergeTypeDefs(typesArray)
+  const schema = buildASTSchema(mergedSchema)
   app.use(
     '/',
     graphqlHTTP({
@@ -40,6 +47,8 @@ export const start = async () => {
       graphiql: true
     })
   )
+
+  console.log()
   app.listen(PORT, () => {
     console.log(`Server is Running on ${PORT}`)
   })

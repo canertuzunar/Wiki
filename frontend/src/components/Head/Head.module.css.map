@@ -1,9 +1,9 @@
 {
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "Head.module.scss"
-    ],
-    "names": [],
-    "file": "Head.module.css"
+  "version": 3,
+  "mappings": "",
+  "sources": [
+    "Head.module.scss"
+  ],
+  "names": [],
+  "file": "Head.module.css"
 }

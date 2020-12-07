@@ -1,14 +1,8 @@
-import Header from'./Header/Header'
-import Footer from'./Footer/Footer'
-import Layout from'./Layout/Layout'
-import LinkedText from'./Link/Link'
-import Logo from'./Logo/Logo'
+import Header from './Header/Header'
+import Footer from './Footer/Footer'
+import Layout from './Layout/Layout'
+import LinkedText from './Link/Link'
+import Logo from './Logo/Logo'
 import Head from './Head/Head'
-export {
-    Footer,
-    Header,
-    Layout,
-    LinkedText,
-    Logo,
-    Head
-}
+import Search from './Search/Search'
+export { Footer, Header, Layout, LinkedText, Logo, Head, Search }
