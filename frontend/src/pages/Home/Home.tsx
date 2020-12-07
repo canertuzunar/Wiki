@@ -5,6 +5,7 @@ import cnBind from 'classnames/bind'
 import xbox from '../../image/xbox.png'
 import i18next from 'i18next'
 const Home = () => {
+  //TODO search results(similar name)
   let cx = cnBind.bind(style) 
   return (
     <Layout>
