@@ -8,11 +8,13 @@ header {
   background-color: $white;
 }
 
+
 .headerWrapper {
   display: flex;
   flex-basis: 95%;
   justify-content: space-between;
 }
+
 
 .headerAttr {
   position: sticky;
@@ -25,11 +27,43 @@ header {
   border-radius: 0 0 5px 5px;
 }
 
+
 @media (min-width: 320px) {
   .sign {
     display: none;
   }
 }
+
+
+.menuButton{
+  flex-basis:10%;
+  height:24px;
+  align-self: center;
+  .line{
+    display: block;
+    height: 5px;
+    width: 25px;
+    position: relative;
+    background-color: black;
+    cursor: pointer;
+    &::after, &::before{
+      display: block;
+      position: absolute;
+      content: ' ';
+      height: 5px;
+      width: 25px;
+      margin: 2px 0;
+      background-color: black;
+    }
+    &::before {
+      margin-top: -8px;
+    }
+    &::after {
+      margin-top: 8px;
+    }
+  }
+}
+
 
 @media (min-width: 1024px) {
   .sign {
