@@ -7,6 +7,8 @@ import game from '../../graphql/query/game.graphql.js'
 import { Query } from 'react-apollo'
 import Infos from 'src/components/Infos/Infos'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
 interface GameInterface {
   game: any
 }
@@ -15,12 +17,10 @@ interface GameInterfaceVars {
 }
 const Content = () => {
   const { id } = useParams<{ id: string }>()
-  console.log(id)
   return (
     <Layout>
       <Query<GameInterface, GameInterfaceVars> query={game} variables={{name:id}}>
         {({loading, error, data}) => {
-          console.log(loading, error, data, id)
           return loading ? (<div>loading</div>) :(
             <div className={style.wrapper}>
               <div className={style.detailSide}>
@@ -28,7 +28,7 @@ const Content = () => {
                 {<Infos game={data?.game} />}
               </div>
               <div className={style.contentSide}>
-                {<ReactMarkdown source={data?.game.content}/>}
+                <ReactMarkdown plugins={[remarkGfm, remarkParse]}  children={data?.game.content}/>
               </div>
             </div>
           )
