@@ -4,6 +4,7 @@ import styles from './Header.module.scss'
 import cn from 'classnames'
 import cnBind from 'classnames/bind'
 import { useStore } from '../../util/store/store'
+import { Link } from 'react-router-dom'
 // TODO add sign in button 
 const Header = () => {
   const { state } = useStore()
@@ -15,6 +16,7 @@ const Header = () => {
           <span className={cn(styles.line)}></span>
         </label>
         <Logo />
+        <Link to="/" className={cn(styles.sign)}>sign in</Link>
       </div>
     </header>
   )

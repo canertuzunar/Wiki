@@ -39,13 +39,13 @@ header {
   flex-basis:10%;
   height:24px;
   align-self: center;
+  cursor: pointer;
   .line{
     display: block;
     height: 5px;
     width: 25px;
     position: relative;
     background-color: black;
-    cursor: pointer;
     &::after, &::before{
       display: block;
       position: absolute;
@@ -62,6 +62,14 @@ header {
       margin-top: 8px;
     }
   }
+}
+
+.sign {
+  align-self: center;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  color: $black;
 }
 
 
