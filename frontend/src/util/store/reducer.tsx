@@ -22,6 +22,12 @@ const reducer = (state: StateInterface, action: ReducerInterface) => {
         ...state,
         headerAttr: action.value
       }
+    case 'setMenu': {
+      return {
+        ...state,
+        menuOpen: action.value
+      }
+    }
     default:
       throw new Error()
   }

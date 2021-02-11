@@ -13,6 +13,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^6.1.0",
     "@types/react-router-dom": "^5.1.6",
+    "@types/styled-components": "^5.1.7",
     "apollo-boost": "^0.4.9",
     "classnames": "^2.2.6",
     "graphql": "^15.4.0",
@@ -30,6 +31,7 @@
     "react-scripts": "3.4.3",
     "remark-gfm": "^1.0.0",
     "remark-parse": "^9.0.0",
+    "styled-components": "^5.2.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
