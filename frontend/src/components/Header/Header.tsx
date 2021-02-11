@@ -1,5 +1,5 @@
 import React from 'react'
-import { Logo } from '..'
+import { Logo, Menu, MenuButton } from '..'
 import styles from './Header.module.scss'
 import cn from 'classnames'
 import cnBind from 'classnames/bind'
@@ -12,9 +12,8 @@ const Header = () => {
   return (
     <header className={cx({ headerAttr: state.headerAttr })}>
       <div className={cx({ headerWrapper: true })}>
-        <label className={cn(styles.menuButton)}>
-          <span className={cn(styles.line)}></span>
-        </label>
+        <MenuButton/>
+        <Menu/>
         <Logo />
         <Link to="/" className={cn(styles.sign)}>sign in</Link>
       </div>
