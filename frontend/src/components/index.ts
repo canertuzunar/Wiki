@@ -8,4 +8,15 @@ import Search from './Search/Search'
 import Menu from './Menu/menu'
 import StyledMenu from './StyledMenu/styledMenu'
 import MenuButton from './MenuButton/menuButon'
-export { Footer, Header, Layout, LinkedText, Logo, Head, Search, Menu, StyledMenu, MenuButton}
+export {
+  Footer,
+  Header,
+  Layout,
+  LinkedText,
+  Logo,
+  Head,
+  Search,
+  Menu,
+  StyledMenu,
+  MenuButton
+}
