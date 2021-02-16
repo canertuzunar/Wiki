@@ -9,6 +9,6 @@ type Owner {
   url: String!
 }
 type Query {
-  engines: Engine!
+  engines: [Engine]
   engine(name: String!): Engine!
 }
