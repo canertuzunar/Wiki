@@ -6,7 +6,7 @@ import cnBind from 'classnames/bind'
 const Logo = () => {
   let cx = cnBind.bind(styles)
   return (
-    <Link to="/content" className={cx({ logo: true})}>
+    <Link to="/" className={cx({ logo: true})}>
       <h2>GameWiki</h2>
     </Link>
   )
