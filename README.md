@@ -1,12 +1,10 @@
 game wiki project store all game data(characters, screenshots, cheats, etc...)
 
 
-ideas => 
-
+feature => 
 	game score(from user)
 	comment
 
-DevOPS
 
 Backend =>
 	Data Structure =>
@@ -43,9 +41,8 @@ Backend =>
 	4.[ ] kubernetes and Docker for scale 
 Frontend => 
 
-	1.[]SearchBar Focus
+	1.[x]SearchBar Focus
 	2.[]Responsive Design
-	3.[]Flexbox driven code
 	4.[]Refactor the style code
 	5.[]Change Design
 	6.[]Module System
@@ -54,4 +51,3 @@ Frontend =>
 #
 #
 #
-#mikro servis mimarisini kur 
