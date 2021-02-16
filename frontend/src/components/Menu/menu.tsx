@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useStore } from 'src/util/store/store'
 import { StyledMenu } from '..'
 
@@ -7,10 +8,10 @@ const Menu = () => {
     return (
         <StyledMenu open={state.menuOpen}>
             <h2>gamewiki</h2>
-            <a href="/">Games</a>
-            <a href="/">Developers</a>
-            <a href="/">Engine</a>
-            <a href="/">Pulishers</a>
+            <Link to="/games">Games</Link>
+            <Link to="/engines">Engines</Link>
+            <Link to="/developers">Developers</Link>
+            <Link to="/publishers">Publishers</Link>
         </StyledMenu>
     )
 }
