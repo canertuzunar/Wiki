@@ -21,3 +21,5 @@ export const EngineModel = new mongoose.Schema({
     required: true
   }
 })
+
+module.exports = mongoose.model('Engine', EngineModel)

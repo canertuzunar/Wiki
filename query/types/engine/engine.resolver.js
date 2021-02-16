@@ -1,10 +1,13 @@
-const { EngineModel } = require('./engine.model')
+const Engine = require('./engine.model')
 
-export const EngineResolver = {
+const EngineResolver = {
   engines: async () => {
-    return await EngineModel.find({}).lean().exec()
+    return await Engine.find({}).lean().exec()
   },
   engine: async (args) => {
-    return await EngineModel.findOne({ name: args.name })
+    return await Engine.findOne({ name: args.name })
   }
 }
+
+
+export default EngineResolver

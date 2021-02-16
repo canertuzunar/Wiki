@@ -8,6 +8,7 @@ import Search from './Search/Search'
 import Menu from './Menu/menu'
 import StyledMenu from './StyledMenu/styledMenu'
 import MenuButton from './MenuButton/menuButon'
+import Card from './Card/Card'
 export {
   Footer,
   Header,
@@ -18,5 +19,6 @@ export {
   Search,
   Menu,
   StyledMenu,
-  MenuButton
+  MenuButton, 
+  Card
 }
