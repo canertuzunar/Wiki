@@ -23,14 +23,14 @@ const App = () => {
   }, [location])
   return (
     <Switch>
-      <Route path="/content/:id">
-        <Content />
+      <Route exact path="/">
+        <Home />
       </Route>
-      <Route path="/:listType">
+      <Route exact path="/:listType">
         <List />
       </Route>
-      <Route path="/">
-        <Home />
+      <Route exact path="/content/:id">
+        <Content />
       </Route>
     </Switch>
   )
