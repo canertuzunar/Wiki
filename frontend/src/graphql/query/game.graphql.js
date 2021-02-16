@@ -1,7 +1,8 @@
 import gql from 'graphql-tag'
 
-export default gql`
-  query Games($name: String!) {
+export const GameQueries = {
+  game : gql`
+  query Game($name: String!) {
     game(name: $name) {
       name
       release
@@ -25,4 +26,24 @@ export default gql`
       content
     }
   }
-`
+`,
+games : gql`
+  query Games {
+    games {
+      name
+      release
+      category
+      publisher
+      developers {
+        name
+      }
+      platforms {
+        name
+      }
+    }
+  }
+`,
+
+
+
+} 
