@@ -6,7 +6,7 @@ import querySelector from 'src/util/querySelector'
 import styled from 'styled-components'
 
 interface ListInterface {
-    listType: Object[];
+    listType:  string;
 }
 
 interface ListInterfaceVars {
@@ -19,13 +19,12 @@ interface ParamInterface {
 
 const List = () => {
     const { listType } = useParams<ParamInterface>()
-    const selectedGames = querySelector(listType)
+    const selectedQuery = querySelector(listType)
     return (
         <Layout>
-        <Query<ListInterface, ListInterfaceVars> query={selectedGames}>
+            <Query<ListInterface, ListInterfaceVars> query={selectedQuery}>
                 {
                     ({loading, error, data}) => {
-                        console.log(data)
                         return loading ? (<p>loading</p>) : (
                             <StyledList>
                                 {data?.[listType].map(({name, category, owner}:any, index:number) => {
