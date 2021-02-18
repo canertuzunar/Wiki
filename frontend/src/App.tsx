@@ -5,6 +5,7 @@ import { Content, Home, List } from './pages'
 import './util/master.scss'
 import { useStore } from './util/store/store'
 import resources from './util/localize/resources'
+import { NoMatch, RouteWithError } from './components'
 
 i18next.init({
   resources,
@@ -23,15 +24,16 @@ const App = () => {
   }, [location])
   return (
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/:listType">
-        <List />
-      </Route>
-      <Route exact path="/content/:id">
+      <RouteWithError exact path="/content/:id">
         <Content />
-      </Route>
+      </RouteWithError>
+      <RouteWithError exact path="/:listType">
+          <List />
+      </RouteWithError>
+      <RouteWithError exact path="/">
+        <Home />
+      </RouteWithError>
+      <Route component={ NoMatch } />
     </Switch>
   )
 }
