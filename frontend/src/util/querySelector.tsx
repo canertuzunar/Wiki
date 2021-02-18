@@ -1,7 +1,7 @@
 import { GameQueries } from '../graphql/query/game.graphql'
 import { EngineQueries } from '../graphql/query/engine.grapqhl'
 
-const querySelector = (route: Object) => {
+const querySelector = (route: string) => {
     switch(route) {
         case 'games':
             return GameQueries.games
