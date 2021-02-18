@@ -9,6 +9,9 @@ import Menu from './Menu/menu'
 import StyledMenu from './StyledMenu/styledMenu'
 import MenuButton from './MenuButton/menuButon'
 import Card from './Card/Card'
+import NoMatch from './NoMatch/NoMatch'
+import Error from './Error/Error'
+import RouteWithError from './RouteWithError'
 export {
   Footer,
   Header,
@@ -20,5 +23,8 @@ export {
   Menu,
   StyledMenu,
   MenuButton, 
-  Card
+  Card,
+  NoMatch,
+  Error,
+  RouteWithError
 }
