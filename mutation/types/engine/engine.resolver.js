@@ -1,18 +1,18 @@
 const EngineModel  = require("./engine.model")
 
 const EngineResolver = {
-    addEngine: async (args) => {
-        return await EngineModel.create(args.input)
+    addEngine: async ({input}) => {
+        return await EngineModel.create(input)
         .lean()
         .exec()
     },
-    removeEngine: async (args) => {
-        return await EngineModel.findOneAndRemove(args.name)
+    removeEngine: async ({name}) => {
+        return await EngineModel.findOneAndRemove(name)
         .lean()
         .exec()
     },
-    updateEngine: async (args) => {
-        return await EngineModel.findOneAndUpdate(name, args.input, {new:true})
+    updateEngine: async ({name, input}) => {
+        return await EngineModel.findOneAndUpdate(name, input, {new:true})
         .lean()
         .exec()
     }

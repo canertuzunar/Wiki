@@ -1,16 +1,16 @@
 const { DevelopersModel } = require("./developers.model")
 
 const DevelopersResolver = {
-    addDevelopers: async (args) => {
-        return await DevelopersModel.create(args.input)
+    addDevelopers: async ({input}) => {
+        return await DevelopersModel.create(input)
     },
-    removeDevelopers: async (args) => {
-        return await Game.findOneAndRemove({name: args.name})
+    removeDevelopers: async ({name}) => {
+        return await Game.findOneAndRemove({name: name})
         .lean()
         .exec()
     },
-    updateGame: async (args) => {
-        return Game.findOneAndUpdate(args.name, args.input, {new:true})
+    updateGame: async ({name, input }) => {
+        return Game.findOneAndUpdate(name, input, {new:true})
         .lean()
         .exec()
     }
