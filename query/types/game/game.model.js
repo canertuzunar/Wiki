@@ -60,7 +60,10 @@ export const GameModel = new mongoose.Schema({
       image: String
     }
   ],
-  content: String
+  content: {
+    type: String,
+    required: true
+  }
 })
 
 module.exports = mongoose.model('Game', GameModel)

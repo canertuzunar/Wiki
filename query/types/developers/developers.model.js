@@ -25,5 +25,11 @@ export const DevelopersModel = new mongoose.Schema({
         type: String
       }
     }
-  ]
+  ],
+  content: {
+    type: String,
+    required: true
+  }
 })
+
+module.exports = mongoose.model('Developers', DevelopersModel)

@@ -3,6 +3,7 @@ type Engine {
   games: [String!]
   owner: Owner!
   license: String!
+  content: String!
 }
 type Owner {
   name: String!

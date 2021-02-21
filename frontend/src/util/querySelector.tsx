@@ -1,5 +1,6 @@
 import { GameQueries } from '../graphql/query/game.graphql'
 import { EngineQueries } from '../graphql/query/engine.grapqhl'
+import { DeveloperQueries } from 'src/graphql/query/developer.graphql'
 
 const querySelector = (route: string) => {
     switch(route) {
@@ -7,6 +8,8 @@ const querySelector = (route: string) => {
             return GameQueries.games
         case 'engines':
             return EngineQueries.engines 
+        case 'developers':
+            return DeveloperQueries.developers
         default: 
             throw Error('unknown input');
     }

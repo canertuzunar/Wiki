@@ -53,7 +53,10 @@ export const GameModel= new mongoose.Schema({
                 image: String
             }
         ],
-        content: String
+        content: {
+            type: String,
+            required: true
+        }
 })
 
 

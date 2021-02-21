@@ -17,6 +17,7 @@ interface ParamInterface {
     listType : string;
 }
 
+
 const List = () => {
     const { listType } = useParams<ParamInterface>()
     const selectedQuery = querySelector(listType)
@@ -27,8 +28,8 @@ const List = () => {
                     ({loading, error, data}) => {
                         return loading ? (<p>loading</p>) : (
                             <StyledList>
-                                {data?.[listType].map(({name, category, owner}:any, index:number) => {
-                                    return <Card key={index} name={name} category={category || owner.name}/>
+                                {data?.[listType].map(({name, category, owner, since}:any, index:number) => {
+                                    return <Card key={index} name={name} info={category || since || owner.name}/>
                                 })}
                             </StyledList>
                         )

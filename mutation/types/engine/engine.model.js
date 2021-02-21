@@ -19,6 +19,10 @@ export const EngineModel = new mongoose.Schema({
     license: {
         type: String,
         required: true  
+    },
+    content: {
+        type: String,
+        required: true
     }
 })
 

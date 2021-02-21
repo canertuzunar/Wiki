@@ -7,8 +7,9 @@ type Developers {
   since: String!
   games: [String!]
   socialLinks: [Url!]
+  content: String!
 }
 type Query {
-  developers: Developers
+  developers: [Developers]
   developer(name: String!): Developers
 }
