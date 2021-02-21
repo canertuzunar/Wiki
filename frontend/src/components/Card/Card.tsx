@@ -1,13 +1,11 @@
 import React, {FC} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 interface CardInterface {
   name: string;
-  category: string[];
+  info?: string[];
 }
-const Card: FC<CardInterface> = ({name, category}) => {
-  const {listType} = useParams<{listType: string}>()
-  console.log(listType)
+const Card: FC<CardInterface> = ({name, info}) => {
     return (
       <StyledCard className="card">
             <Link to={`/content/${name}`}>
@@ -15,7 +13,7 @@ const Card: FC<CardInterface> = ({name, category}) => {
                     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mordeo.org%2Ffiles%2Fuploads%2F2020%2F01%2FDoom-Eternal-2020-4K-Ultra-HD-Mobile-Wallpaper.jpg&f=1&nofb=1" alt="" className="card-img"/>
                     <div className="platforms">
                         <div>
-                            <p>{category}</p>
+                            <p>{info}</p>
                         </div>
                     </div>
                 </picture>
