@@ -10,6 +10,6 @@ type Developers {
   content: String!
 }
 type Query {
-  developers: Developers
+  developers: [Developers]
   developer(name: String!): Developers
 }
