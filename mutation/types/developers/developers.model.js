@@ -23,5 +23,9 @@ export const DevelopersModel = new mongoose.Schema({
         url: {
             type: String
         }
-    }]
+    }],
+    content: {
+        type: String,
+        required: true
+    }
 })
