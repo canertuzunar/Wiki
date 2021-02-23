@@ -1,95 +1,67 @@
 import React, { FC } from 'react'
-import style from './Infos.module.scss'
+import styled from 'styled-components'
 
 interface InfosPropsInterface {
-  game: {
-    release?: string
-    mainCharacter?: string
-    category?: string
-    publisher?: string
-    developers: any[]
-    engine?: string
-    platforms: any[]
-    directors: any[]
-    series?: string
-    characters: any[]
-  }
+  data: object;
 }
 
-const Infos: FC<InfosPropsInterface> = ({ game }) => {
-  return (
-    <div className={style.details}>
-      <div className={style.detail}>
-        <strong>Release Date:</strong>
-        <span>{game.release}</span>
-      </div>
-      <div className={style.detail}>
-        <strong>Main Character</strong>
-        <span>{game.mainCharacter} </span>
-      </div>
-      <div className={style.detail}>
-        <strong>Category</strong>
-        <span>{game.category}</span>
-      </div>
-      <div className={style.detail}>
-        <strong>Publisher</strong>
-        <span>{game.publisher}</span>
-      </div>
-      <div className={style.detail}>
-        <strong>Developers</strong>
-        <span>
-          {game.developers.map((developers: any, index: any) => {
-            return <p key={index}>{developers.name}</p>
-          })}
-        </span>
-      </div>
-      <div className={style.detail}>
-        <strong>Engine</strong>
-        <span>{game.engine}</span>
-      </div>
-      <div className={style.detail}>
-        <strong>Platforms</strong>
-        <span>
-          {game.platforms.map((platforms: any, index: any) => {
-            return <span key={index}>{platforms.name}, </span>
-          })}
-        </span>
-      </div>
-      <div className={style.detail}>
-        <strong>Directors</strong>
-        <span>
-          {game.directors.map((directors: any, index: any) => {
-            return <p key={index}>{directors.name}</p>
-          })}
-        </span>
-      </div>
-      <div className={style.detail}>
-        <strong>Series</strong>
-        <span>{game.series}</span>
-      </div>
-      <div className={style.detail}>
-        <strong>Characters</strong>
-        <span>
-          {game.characters.map((characters: any, index: any) => {
-            return <p key={index}>{characters.name}</p>
-          })}
-        </span>
-      </div>
-    </div>
+
+const renderData = (data:object) => {
+  const keys = Object.keys(data)
+  return keys.map((key, index) => {
+    if(key !== 'content') {
+      return (
+        <tr key={index}>
+          <th>{key.toUpperCase()}</th>
+          <td>{listElement(data[key])}</td>
+        </tr>
+      )
+    }else {
+      return '';
+    }
+  })
+}
+
+const listElement = (data: String[]) => {
+  if(!Array.isArray(data)) {
+    return data
+  }
+  return(
+    <ul>
+      {data.map(({name}:any, index) => {
+        return (
+          <li key={index}>
+            {name}
+          </li>
+        )
+      })}
+    </ul>
   )
 }
-Infos.defaultProps = {
-  game: {
-    category: 'FPS',
-    characters: [{ name: 'Archon of Hell' }],
-    developers: [{ name: 'id Software' }],
-    directors: [{ name: 'John Carmack' }],
-    engine: 'Doom Engine',
-    mainCharacter: 'Doom Slayer',
-    platforms: [{ name: 'It Runs Doom' }],
-    publisher: 'Bethesda',
-    release: '2017',
-    series: 'Doom Series'
-  }
+
+const Infos: FC<InfosPropsInterface> = ({ data }) => {
+  return (
+    <StyledTable>
+      <tbody>
+        {renderData(data)}
+      </tbody>
+    </StyledTable>
+  )
 }
+
+const StyledTable = styled.table`
+  th, td {
+    text-align: left;
+    vertical-align: top;
+  }
+  th{
+    padding: 0px 15px 15px 0px;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+`
+
 export default Infos

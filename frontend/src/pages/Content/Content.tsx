@@ -9,6 +9,7 @@ import Infos from 'src/components/Infos/Infos'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
+
 interface GameInterface {
   game: any
 }
@@ -26,7 +27,7 @@ const Content = () => {
             <div className={style.wrapper}>
               <div className={style.detailSide}>
                 <img src={doom} alt="" />
-                {<Infos game={data?.game} />}
+                {<Infos data={data?.game} />}
               </div>
               <div className={style.contentSide}>
                 <ReactMarkdown plugins={[remarkGfm, remarkParse]}  children={data?.game.content}/>
