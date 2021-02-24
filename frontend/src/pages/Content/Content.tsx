@@ -31,7 +31,7 @@ const Content = () => {
             <div className={style.wrapper}>
               <div className={style.detailSide}>
                 <img src={doom} alt="" />
-                {<Infos data={data![listType]} />}
+                <Infos data={data![listType]} />
               </div>
               <div className={style.contentSide}>
                 <ReactMarkdown plugins={[remarkGfm, remarkParse]}  children={data![listType].content}/>
