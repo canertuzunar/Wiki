@@ -21,6 +21,7 @@ interface ParamInterface {
 const List = () => {
     const { listType } = useParams<ParamInterface>()
     const selectedQuery = querySelector(listType)
+    const singleQuery = listType.replace('s', '')
     return (
         <Layout>
             <Query<ListInterface, ListInterfaceVars> query={selectedQuery}>
@@ -29,7 +30,7 @@ const List = () => {
                         return loading ? (<p>loading</p>) : (
                             <StyledList>
                                 {data?.[listType].map(({name, category, owner, since}:any, index:number) => {
-                                    return <Card key={index} name={name} info={category || since || owner.name}/>
+                                    return <Card key={index} listType={singleQuery} name={name} info={category || since || owner}/>
                                 })}
                             </StyledList>
                         )
