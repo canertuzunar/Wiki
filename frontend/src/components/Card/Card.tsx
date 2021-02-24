@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 interface CardInterface {
   name: string;
+  listType: string;
   info?: string[];
 }
-const Card: FC<CardInterface> = ({name, info}) => {
+const Card: FC<CardInterface> = ({name, info, listType}) => {
     return (
       <StyledCard className="card">
-            <Link to={`/content/${name}`}>
+            <Link to={`/${listType}/${name}`}>
                 <picture className="imgContainer">
                     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mordeo.org%2Ffiles%2Fuploads%2F2020%2F01%2FDoom-Eternal-2020-4K-Ultra-HD-Mobile-Wallpaper.jpg&f=1&nofb=1" alt="" className="card-img"/>
                     <div className="platforms">

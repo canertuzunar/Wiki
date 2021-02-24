@@ -24,7 +24,7 @@ const App = () => {
   }, [location])
   return (
     <Switch>
-      <RouteWithError exact path="/content/:id">
+      <RouteWithError exact path="/:listType/:id">
         <Content />
       </RouteWithError>
       <RouteWithError exact path="/:listType">

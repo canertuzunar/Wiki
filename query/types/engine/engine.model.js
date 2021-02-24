@@ -8,13 +8,12 @@ export const EngineModel = new mongoose.Schema({
   },
   games: [
     {
-      type: String,
-      required: true
+      name: String
     }
   ],
   owner: {
-    name: String,
-    url: String
+    type:String,
+    required: true
   },
   license: {
     type: String,

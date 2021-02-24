@@ -13,8 +13,8 @@ export const EngineModel = new mongoose.Schema({
         }
     ],
     owner: {
-        name: String,
-        url: String
+        type: String,
+        required: true 
     },
     license: {
         type: String,

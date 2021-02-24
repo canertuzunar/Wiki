@@ -1,22 +1,15 @@
     type Engine{ 
         name: String!
         games: [String!]
-        owner: Owner! 
+        owner: String! 
         license: String!
         content: String!
     }
-    type Owner {
-        name: String!
-        url: String!
-    }
-    input OwnerInput {
-        name: String!
-        url: String!
-    }
+
     input EngineInput {
         name: String!
         games: [String!]
-        owner: OwnerInput! 
+        owner: String! 
         license: String!
         content: String!
 

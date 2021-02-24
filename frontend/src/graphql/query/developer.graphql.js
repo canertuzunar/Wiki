@@ -11,6 +11,7 @@ export const DeveloperQueries = {
             name
             url
         }
+        content
     }
   }
 `,
