@@ -12,6 +12,7 @@ import Card from './Card/Card'
 import NoMatch from './NoMatch/NoMatch'
 import Error from './Error/Error'
 import RouteWithError from './RouteWithError'
+import Infos from './Infos/Infos'
 export {
   Footer,
   Header,
@@ -26,5 +27,6 @@ export {
   Card,
   NoMatch,
   Error,
-  RouteWithError
+  RouteWithError,
+  Infos
 }
