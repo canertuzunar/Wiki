@@ -4,9 +4,11 @@ TODO General List
 1. [] Skeleton(Ghost) Loader
 2. [] GraphQL component error handling 
 3. [] Responsive Design
+	1. [] responsive info component's image
 4. [] Login Page
-5. [] Add Game/Engine/Developers Page
-	1. [] FIXME detect content type game, engine etc.
+5. [x] Add Game/Engine/Developers Page
+	1. [x] FIXME detect content type game, engine etc.
+	2. [] get image url from DS 
 6. [] Dashboard(game, engine, developers)
 7. [] User rating, comment 
 8. [] Content List Component 
@@ -23,8 +25,7 @@ TODO General List
 	2. [x] verify the token	
 12. [] kubernetes and Docker for scale 
 13. [x] SearchBar Focus
-14. []Responsive Design
-15. []Refactor the style code
-16. []Default game, engine, developers data
+14. []Refactor the style code
+15. []Default game, engine, developers data
 
 
