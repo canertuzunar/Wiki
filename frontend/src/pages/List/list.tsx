@@ -1,7 +1,7 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import { useParams } from 'react-router-dom'
-import { Card, Layout } from 'src/components'
+import { Card, Layout, LoadingList } from 'src/components'
 import querySelector from 'src/util/querySelector'
 import styled from 'styled-components'
 
@@ -27,7 +27,7 @@ const List = () => {
             <Query<ListInterface, ListInterfaceVars> query={selectedQuery}>
                 {
                     ({loading, error, data}) => {
-                        return loading ? (<p>loading</p>) : (
+                        return loading ? (<LoadingList />) : (
                             <StyledList>
                                 {data?.[listType].map(({name, category, owner, since}:any, index:number) => {
                                     return <Card key={index} listType={singleQuery} name={name} info={category || since || owner}/>
