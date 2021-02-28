@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Content.module.scss'
-import { Infos, Layout } from '../../components'
+import { Infos, Layout, LoadingContent } from '../../components'
 import doom from '../../image/doom.jpg'
 import { useParams } from 'react-router-dom'
 import { Query } from 'react-apollo'
@@ -26,8 +26,7 @@ const Content = () => {
     <Layout>
       <Query<GameInterface, GameInterfaceVars> query={selectedQuery} variables={{name:id}}>
         {({loading, error, data}) => {
-          console.log(error, data)
-          return loading ? (<div>loading</div>) :(
+          return loading ? (<LoadingContent/>) :(
             <div className={style.wrapper}>
               <div className={style.detailSide}>
                 <img src={doom} alt="" />

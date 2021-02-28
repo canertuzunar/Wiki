@@ -9,10 +9,14 @@ import Menu from './Menu/menu'
 import StyledMenu from './StyledMenu/styledMenu'
 import MenuButton from './MenuButton/menuButon'
 import Card from './Card/Card'
+import SkeletonCard from './Card/SkeletonCard'
 import NoMatch from './NoMatch/NoMatch'
 import Error from './Error/Error'
 import RouteWithError from './RouteWithError'
 import Infos from './Infos/Infos'
+import Skeleton from './Skeleton/skeleton'
+import LoadingContent from './LoadingElement/LoadingContent'
+import LoadingList from './LoadingElement/LoadingList'
 export {
   Footer,
   Header,
@@ -28,5 +32,9 @@ export {
   NoMatch,
   Error,
   RouteWithError,
-  Infos
+  Infos,
+  Skeleton,
+  LoadingContent,
+  SkeletonCard,
+  LoadingList
 }
