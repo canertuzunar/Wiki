@@ -1,6 +1,6 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 import { Redirect, RouteComponentProps, withRouter } from "react-router-dom";
-import styled from "styled-components";
+import { ErrorPage } from "src/pages";
 import { Layout } from "..";
 interface Props  extends RouteComponentProps{
   children: ReactNode;
@@ -46,25 +46,16 @@ class ErrorBoundary extends Component<Props, State> {
       }
       return(
         <Layout>
-          <StyledError>
-            <h1>Sorry.. there was an error: {this.state.errorMessage}</h1>
-            <p>You will redirect to home page in 6 seconds</p>
-          </StyledError>
+          <ErrorPage />
         </Layout>
       )
+
     }
 
     return this.props.children;
   }
 }
 
-const StyledError = styled.div`
-
-  h1, p {
-    text-align: center;
-  }
-  
-` 
 
 
 
