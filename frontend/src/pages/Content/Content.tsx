@@ -8,6 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import querySelector from 'src/util/querySelector'
+import { ErrorPage } from '..'
 
 interface GameInterface {
   [key: string]: any
@@ -26,7 +27,7 @@ const Content = () => {
     <Layout>
       <Query<GameInterface, GameInterfaceVars> query={selectedQuery} variables={{name:id}}>
         {({loading, error, data}) => {
-          return loading ? (<LoadingContent/>) :(
+          return error ? <ErrorPage /> : loading ? (<LoadingContent/>) : (
             <div className={style.wrapper}>
               <div className={style.detailSide}>
                 <img src={doom} alt="" />

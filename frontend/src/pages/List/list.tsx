@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { Card, Layout, LoadingList } from 'src/components'
 import querySelector from 'src/util/querySelector'
 import styled from 'styled-components'
+import { ErrorPage } from '..'
 
 interface ListInterface {
     listType:  string;
@@ -27,7 +28,7 @@ const List = () => {
             <Query<ListInterface, ListInterfaceVars> query={selectedQuery}>
                 {
                     ({loading, error, data}) => {
-                        return loading ? (<LoadingList />) : (
+                        return error ? <ErrorPage /> : loading ? (<LoadingList />) : (
                             <StyledList>
                                 {data?.[listType].map(({name, category, owner, since}:any, index:number) => {
                                     return <Card key={index} listType={singleQuery} name={name} info={category || since || owner}/>

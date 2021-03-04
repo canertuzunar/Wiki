@@ -5,7 +5,7 @@ import { SkeletonCard } from '../index'
 const SkeletonContent = () => {
     const elementStack = []
     for(let i = 0; i <= 12; i++) {
-        elementStack.push(<SkeletonCard/>)
+        elementStack.push(<SkeletonCard key={i}/>)
     }
     return(
         <StyledContent>

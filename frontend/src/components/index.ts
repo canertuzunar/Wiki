@@ -17,6 +17,7 @@ import Infos from './Infos/Infos'
 import Skeleton from './Skeleton/skeleton'
 import LoadingContent from './LoadingElement/LoadingContent'
 import LoadingList from './LoadingElement/LoadingList'
+import LinkButton from './Buttons/LinkButton'
 export {
   Footer,
   Header,
@@ -36,5 +37,6 @@ export {
   Skeleton,
   LoadingContent,
   SkeletonCard,
-  LoadingList
+  LoadingList,
+  LinkButton
 }
