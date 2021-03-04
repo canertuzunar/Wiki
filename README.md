@@ -3,7 +3,7 @@ GameWiki
 TODO General List
 
 1. [x] Skeleton(Ghost) Loader
-2. [] GraphQL component error handling
+2. [x] GraphQL component error handling
 3. [] Responsive Design
    1. [] responsive info component's image
 4. [] Login Page
