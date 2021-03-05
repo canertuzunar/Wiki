@@ -17,7 +17,7 @@ const renderData = (data:object) => {
         </tr>
       )
     }else {
-      return '';
+      return <tr key={index}></tr>;
     }
   })
 }
