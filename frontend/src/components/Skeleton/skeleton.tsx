@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import splitAndConvert from '../../util/splitAndConvert'
 
 interface ISkeleton {
     width?: string;
@@ -11,10 +12,8 @@ interface ISkeleton {
 }
 
 const Skeleton: FC<ISkeleton> = ({width, height, row, widthRandom, heightRadom, backgroundColor}) => {
-    const widthType = width!.toString().replace(/\d+/g, '')
-    const heightType = height!.toString().replace(/\d+/g, '')
-    const w = parseFloat(width!);
-    const h = parseFloat(height!);
+    const [w, widthType] = splitAndConvert(width!)
+    const [h, heightType] = splitAndConvert(height!)
     const SkeletonElements = []
     for(let i = 0; i < row!; i++){
         const randomWidth = `${w - (Math.random() * w * widthRandom!)}${widthType}`;

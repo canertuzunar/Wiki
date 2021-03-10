@@ -28,7 +28,7 @@ const App = () => {
         <Content />
       </RouteWithError>
       <RouteWithError exact path="/:listType">
-          <List />
+        <List />
       </RouteWithError>
       <RouteWithError exact path="/">
         <Home />

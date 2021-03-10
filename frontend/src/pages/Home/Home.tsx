@@ -23,9 +23,9 @@ const Home = () => {
             {i18next.t('secondaryText')}
           </p>
         </div>
-        <div className={cx(style.image)}>
+        <picture className={cx(style.image)}>
           <img src={xbox} alt="" />
-        </div>
+        </picture>
       </div>
     </Layout>
   )
