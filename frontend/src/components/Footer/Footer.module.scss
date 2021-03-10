@@ -1,9 +1,0 @@
-@import '../../util/master.scss';
-#footer {
-  display: flex;
-  flex-basis: 95%;
-  padding: 0 2.5%;
-  :nth-child(n) {
-    margin-right: 2em;
-  }
-}
