@@ -1,15 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Logo.module.scss'
-import cnBind from 'classnames/bind'
+import styled from 'styled-components'
 
 const Logo = () => {
-  let cx = cnBind.bind(styles)
+
   return (
-    <Link to="/" className={cx({ logo: true})}>
+    <StyledLogo as={Link} to="/" >
       <h2>GameWiki</h2>
-    </Link>
+    </StyledLogo>
   )
 }
 
+const StyledLogo = styled.a`
+  text-decoration: none;
+  color: black;
+`
 export default Logo

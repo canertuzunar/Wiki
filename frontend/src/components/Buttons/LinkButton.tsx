@@ -1,11 +1,12 @@
-import React, { FC, ReactNode } from 'react'
+import React, { CSSProperties, FC, ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-
+//TODO Generalize this component 
+//hover => black
 interface ILinkButton {
     children?: ReactNode;
     to?: string;
-    style?: Object;
+    style?: CSSProperties;
 }
 
 const LinkButton: FC<ILinkButton> = ({to, children, style}) => {

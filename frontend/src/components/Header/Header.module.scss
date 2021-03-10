@@ -9,13 +9,11 @@ header {
   z-index: 1002;
 }
 
-
 .headerWrapper {
   display: flex;
   flex-basis: 95%;
   justify-content: space-between;
 }
-
 
 .headerAttr {
   position: sticky;
@@ -24,25 +22,8 @@ header {
   -webkit-box-align: center;
 }
 
-
 @media (min-width: 320px) {
   .sign {
     display: none;
-  }
-}
-
-
-.sign {
-  align-self: center;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-}
-
-
-@media (min-width: 1024px) {
-  .sign {
-    display: block;
   }
 }

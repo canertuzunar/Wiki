@@ -1,23 +1,30 @@
 import React, { Fragment, useState } from'react'
-import cnBind from'classnames/bind'
-import styles from './Search.module.scss'
 import i18next from 'i18next'
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
+
+
+interface IBlur {
+  focus: boolean;
+}
+
 
 const Search = () => {
     let history = useHistory()
-    let cx = cnBind.bind(styles)
     const [focus, setFocus] = useState(false)
+    const [type, setType] = useState('game')
     const [searchParam, setSearchParam]  = useState('')
     const handleSearch = ( searchParam: string ) => {
-        history.push(`content/${searchParam.trim()}`)
+        history.push(`${type}/${searchParam.trim()}`)
+    }
+    const handleType = (e:any) => {
+      setType(e.target.value)
     }
     return(
         <Fragment>
-        <div className={cx({blur:focus})} />
-          <input
+        <StyledSearchBlur focus={focus}/>
+          <StyledSearchInput
             type="text"
-            className={cx(styles.searchBar, styles.bold, styles.font36)}
             placeholder={i18next.t('SearchInput')}
             value={searchParam}
             onChange= {e => {
@@ -36,9 +43,67 @@ const Search = () => {
               setSearchParam('')
             }}
           />
-          
+          <StyledSearchType onChange={handleType}>
+            <option value="game">Game</option>
+            <option value="engine">Engine</option>
+            <option value="developer">Developer</option>
+          </StyledSearchType>
         </Fragment>
     )
 }
+
+const StyledSearchInput = styled.input`
+  background-color: white;
+  border: 1px solid white;
+  border-left: 6px solid black;
+  height: 100px;
+  font-size: 56px;
+  outline: none;
+  margin: auto 0;
+  padding-left: 25px;
+  width: 80%;
+  z-index: 1001;
+
+  @media (max-width: 426px) {
+    font-size: 32px;
+    &::placeholder {
+      font-size: 32px;
+    }
+  }
+`
+
+const StyledSearchType = styled.select`
+  position: relative;
+  border: none;
+  height: 30px;
+  margin: auto auto;
+  z-index: 1001;
+  option {
+    color: white;
+    background-color: black;
+  }
+  option:hover {
+    
+  }
+`
+
+const StyledSearchBlur = styled.div<IBlur>`
+  position: fixed;
+  display: ${props => props.focus ? 'block' : 'none'};
+  background: rgba(28, 30, 44, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  left: 0;
+  top: 0;
+`
+
 
 export default Search

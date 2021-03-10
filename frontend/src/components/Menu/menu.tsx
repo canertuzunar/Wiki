@@ -11,7 +11,6 @@ const Menu = () => {
             <Link to="/games">Games</Link>
             <Link to="/engines">Engines</Link>
             <Link to="/developers">Developers</Link>
-            <Link to="/publishers">Publishers</Link>
         </StyledMenu>
     )
 }
