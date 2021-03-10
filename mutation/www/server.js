@@ -13,11 +13,12 @@ import EngineResolver from '../types/engine/engine.resolver'
 import VerifyToken from '../utils/verifytoken';
 import UserResolver from '../types/user/user.resolver';
 import authentication from '../utils/auth';
+import cors from 'cors'
+
 const mongoose = require('mongoose')
 
-
-
 mongoose.set('useCreateIndex', true)
+app.use(cors())
 app.use(bodyParser.urlencoded({
    extended: false
 }));
@@ -30,7 +31,7 @@ export const start = async () => {
             new GraphQLFileLoader()
         ]
     })
-    app.use('/login', authentication)
+    app.post('/login')
     app.use('/graphql',  graphqlHTTP({
         schema: schema,
         rootValue: merge({}, UserResolver, DevelopersResolver, GameResolver, EngineResolver),

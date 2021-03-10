@@ -3,8 +3,6 @@ const EngineModel  = require("./engine.model")
 const EngineResolver = {
     addEngine: async ({input}) => {
         return await EngineModel.create(input)
-        .lean()
-        .exec()
     },
     removeEngine: async ({name}) => {
         return await EngineModel.findOneAndRemove(name)

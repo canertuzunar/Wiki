@@ -1,6 +1,7 @@
 import jwt from'jsonwebtoken'
 import UserModel from '../types/user/user.model';
 import bcrypt from'bcrypt'
+
 const authentication = async (req, res, next) => {
    const {username, password, email} = req.body;
    if(!username || !password) {
@@ -22,9 +23,11 @@ const authentication = async (req, res, next) => {
        username: username,
        password: user.password
    }, 'secretKey', {expiresIn: '1d' }, (err, token) => {
-       res.json({
-           token
-       })
+       if(err){
+           res.send({...err}).sendStatus(500)
+       }else {
+           res.json({token})
+       }
    })
 
 }
