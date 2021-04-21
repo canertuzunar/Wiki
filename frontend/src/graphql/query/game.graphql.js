@@ -35,6 +35,9 @@ games : gql`
       release
       category
       publisher
+      image{
+        url
+      }
       developers {
         name
       }

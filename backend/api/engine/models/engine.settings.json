@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "engines",
   "info": {
-    "name": "Engine"
+    "name": "Engine",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -26,6 +27,17 @@
     },
     "license": {
       "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

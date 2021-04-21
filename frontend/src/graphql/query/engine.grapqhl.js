@@ -7,6 +7,9 @@ export const EngineQueries = {
                id
                name
                owner
+               image{
+                   url
+               }
            } 
         }
     `,

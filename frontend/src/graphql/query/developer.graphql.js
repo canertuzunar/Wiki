@@ -23,6 +23,9 @@ developers : gql`
         id
         name
         since
+        image{
+            url
+        }
     }
   }
 `,

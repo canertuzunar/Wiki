@@ -56,7 +56,15 @@
       "component": "game-wiki.characters"
     },
     "image": {
-      "type": "string"
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
