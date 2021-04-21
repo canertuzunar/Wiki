@@ -28,13 +28,10 @@ const List = () => {
             <Query<ListInterface, ListInterfaceVars> query={selectedQuery}>
                 {
                     ({loading, error, data}) => {
-                        data?.[listType].map(({name, id, category, owner, since}:any) => {
-                            console.log(name, id, category, owner, since)
-                        })
                         return error ? <ErrorPage /> : loading ? (<LoadingList />) : (
                             <StyledList>
-                                {data?.[listType].map(({name, id, category, owner, since}:any, index:number) => {
-                                    return <Card key={index} id={id} listType={singleQuery} name={name} info={category || since || owner}/>
+                                {data?.[listType].map(({name, id, category, owner, since, image}:any, index:number) => {
+                                    return <Card key={index} id={id} listType={singleQuery} name={name} image={image?.url} info={category || since || owner}/>
                                 })}
                             </StyledList>
                         )
@@ -48,6 +45,6 @@ const List = () => {
 const StyledList = styled.div`
     flex-basis: 100%;
     margin: 0 40px;
-`
+`;
 
 export default List

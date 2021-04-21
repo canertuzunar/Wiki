@@ -1,18 +1,20 @@
 import React, {FC} from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Doom from '../../image/doom.jpg'
 interface CardInterface {
   name: string
   id: string;
   listType: string;
   info?: string[];
+  image?: string;
 }
-const Card: FC<CardInterface> = ({id, info, listType, name}) => {
+const Card: FC<CardInterface> = ({id, info, image,listType, name}) => {
     return (
       <StyledCard className="card">
             <Link to={`/${listType}/${id}`}>
                 <picture className="imgContainer">
-                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mordeo.org%2Ffiles%2Fuploads%2F2020%2F01%2FDoom-Eternal-2020-4K-Ultra-HD-Mobile-Wallpaper.jpg&f=1&nofb=1" alt="" className="card-img"/>
+                    <img src={`${process.env.STRAPI || "http://localhost:1337"}${image}` || Doom } alt="" className="card-img"/>
                     <div className="platforms">
                         <div>
                             <p>{info}</p>
