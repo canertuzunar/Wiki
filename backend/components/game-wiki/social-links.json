@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_game_wiki_social_links",
+  "info": {
+    "name": "Social Links",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_game_wiki_developers",
+  "info": {
+    "name": "developers",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

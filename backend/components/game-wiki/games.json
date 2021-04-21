@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_game_wiki_games",
+  "info": {
+    "name": "games",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_game_wiki_platforms",
+  "info": {
+    "name": "Platforms",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

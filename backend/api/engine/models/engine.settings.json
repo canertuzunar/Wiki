@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "engines",
+  "info": {
+    "name": "Engine"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "games": {
+      "type": "component",
+      "repeatable": true,
+      "component": "game-wiki.games"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "license": {
+      "type": "string"
+    }
+  }
+}

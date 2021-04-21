@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developers",
+  "info": {
+    "name": "Developer",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "since": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "game-wiki.social-links"
+    },
+    "games": {
+      "type": "component",
+      "repeatable": true,
+      "component": "game-wiki.games"
+    }
+  }
+}
