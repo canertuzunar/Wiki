@@ -2,6 +2,8 @@ import React, { Fragment, useState } from'react'
 import i18next from 'i18next'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
+import { useQuery } from 'react-apollo'
+import { gql } from 'apollo-boost'
 
 
 interface IBlur {
@@ -15,8 +17,18 @@ const Search = () => {
     const [type, setType] = useState('game')
     const [searchParam, setSearchParam]  = useState('')
     const handleSearch = ( searchParam: string ) => {
-        history.push(`${type}/${searchParam.trim()}`)
+      if(!loading){
+        history.push(`${type}/${data[type.concat('s')][0].id}`)
+      }
     }
+    const MAIN_QUERY = gql`
+      query getGame($name: String!){
+          games(where: {name: $name}){
+              id
+          }
+      }
+    `
+    const {loading, data} = useQuery(MAIN_QUERY, {variables: {name: searchParam}})
     const handleType = (e:any) => {
       setType(e.target.value)
     }

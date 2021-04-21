@@ -14,7 +14,7 @@ interface GameInterface {
   [key: string]: any
 }
 interface GameInterfaceVars {
-  name: string
+  id: string
 }
 interface IRouter {
   id: string,
@@ -25,7 +25,7 @@ const Content = () => {
   const selectedQuery = querySelector(listType)
   return (
     <Layout>
-      <Query<GameInterface, GameInterfaceVars> query={selectedQuery} variables={{name:id}}>
+      <Query<GameInterface, GameInterfaceVars> query={selectedQuery} variables={{id:id}}>
         {({loading, error, data}) => {
           return error ? <ErrorPage /> : loading ? (<LoadingContent/>) : (
             <StyledContent>
