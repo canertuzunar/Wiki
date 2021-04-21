@@ -2,8 +2,8 @@ import gql from 'graphql-tag'
 
 export const GameQueries = {
   game : gql`
-  query Game($name: String!) {
-    game(name: $name) {
+  query Game($id: ID!) {
+    game(id: $id) {
       name
       release
       mainCharacter
@@ -30,6 +30,7 @@ export const GameQueries = {
 games : gql`
   query Games {
     games {
+      id
       name
       release
       category

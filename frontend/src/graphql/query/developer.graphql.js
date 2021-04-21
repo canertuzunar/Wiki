@@ -2,11 +2,13 @@ import gql from 'graphql-tag'
 
 export const DeveloperQueries = {
   developer : gql`
-  query Developer($name: String!) {
-    developer(name: $name) {
+  query Developer($id: ID!) {
+    developer(id: $id) {
         name
         since
-        games
+        games {
+          name
+        }
         socialLinks{
             name
             url
@@ -18,6 +20,7 @@ export const DeveloperQueries = {
 developers : gql`
   query Developers {
     developers {
+        id
         name
         since
     }

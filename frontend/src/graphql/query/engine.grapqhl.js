@@ -4,14 +4,15 @@ export const EngineQueries = {
     engines: gql`
         query Engines {
            engines {
+               id
                name
                owner
            } 
         }
     `,
     engine: gql`
-        query Engine($name: String!) {
-            engine(name: $name) {
+        query Engine($id: ID!) {
+            engine(id: $id) {
                 name
                 games {
                     name
