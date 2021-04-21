@@ -10,7 +10,7 @@ import { ApolloClient } from 'apollo-client'
 import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 const httpLink = createHttpLink({
-  uri: 'http://192.168.1.26:4000'
+  uri: process.env.STRAPI || 'http://localhost:1337/graphql'
 })
 
 const client = new ApolloClient({
