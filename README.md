@@ -1,6 +1,7 @@
 # Game Wiki :rocket:
 
 **Oyunlar için oluşturulmuş bir ansiklopedidir.**
+
 ![](https://media.giphy.com/media/JeDxbZTg6YuAPsRsLq/giphy.gif)
 
 ## Kullanilan Teknolojiler :computer:
