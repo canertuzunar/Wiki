@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+$black: #000000;
+$white: #ffffff;
+$secondary: #e5e5e5;
+$transparent30: rgba(0, 0, 0, 0.7);
+
+body {
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.secondaryText {
+  color: $secondary;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font22 {
+  font-size: 22px;
+}
+
+.font24 {
+  font-size: 24px;
+}
+
+.font36 {
+  font-size: 36px;
+}
+
+.font48 {
+  font-size: 48px;
+}
+
+.font58 {
+  font-size: 58px;
+}
+
+.font60 {
+  font-size: 60px;
+}
+
+.debug {
+  border: 1px solid black;
+}
